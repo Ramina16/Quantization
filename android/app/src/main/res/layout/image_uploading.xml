@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Button to open image gallery -->
+    <Button
+        android:id="@+id/btnChooseImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Image"
+        android:layout_marginBottom="16dp" />
+
+    <!-- ImageView to display the uploaded image -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Uploaded Image"
+        android:visibility="gone" />
+
+    <!-- TextView for displaying predicted class -->
+    <TextView
+        android:id="@+id/textViewPredictedClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Predicted Class: "
+        android:visibility="gone"
+        android:layout_marginTop="16dp"/>
+
+    <!-- TextView for displaying predicted probability -->
+    <TextView
+        android:id="@+id/textViewProbability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Probability: "
+        android:visibility="gone"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Button to go back to main screen -->
+    <Button
+        android:id="@+id/btnBackToMainUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Main"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
