@@ -1,0 +1,12 @@
+{
+    "path_to_data": "/mnt/Volume_HDD_8TB_1/olena_datasets/dataset_animals/raw-img",
+
+    "num_classes": 10,
+    "optimizer": "adamw",
+    "num_epochs": 1,
+    "batch_size": 32,
+    "lr": 1e-5,
+
+    "max_test_img": 100,
+    "use_pretrained_w": "True"
+}

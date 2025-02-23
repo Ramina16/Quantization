@@ -10,14 +10,13 @@ class VGG_13(nn.Module):
     """
     
     """
-    def __init__(self, num_classes: int = 10, dropout: float = 0.5) -> None:
+    def __init__(self, num_classes: int = 10) -> None:
         """
         
         """
         super(VGG_13, self).__init__()
 
         self.num_classes = num_classes
-        self.dropout = dropout
         layers = []
 
         in_channels = 3
@@ -35,15 +34,6 @@ class VGG_13(nn.Module):
         self.classifier = self._create_classifier()
 
     def _create_classifier(self):
-        # return nn.Sequential(
-        #     nn.Linear(512 * 7 * 7, 4096),
-        #     nn.ReLU(True),
-        #     nn.Dropout(p=self.dropout),
-        #     nn.Linear(4096, 4096),
-        #     nn.ReLU(True),
-        #     nn.Dropout(p=self.dropout),
-        #     nn.Linear(4096, self.num_classes),
-        # )
         return nn.Sequential(
             nn.Linear(512 * 7 * 7, 512),
             nn.ReLU(True),
@@ -66,14 +56,13 @@ class QVGG_13(nn.Module):
     """
     
     """
-    def __init__(self, num_classes: int = 10, dropout: float = 0.5) -> None:
+    def __init__(self, num_classes: int = 10) -> None:
         """
         
         """
         super(QVGG_13, self).__init__()
 
         self.num_classes = num_classes
-        self.dropout = dropout
         self.layers = []
 
         in_channels = 3
@@ -125,5 +114,3 @@ class QVGG_13(nn.Module):
         x = self.dequant(x)
 
         return x
-
-
