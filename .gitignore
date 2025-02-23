@@ -1,2 +1,5 @@
-python/dataset_animals/raw-img
-python/pretrained_weights/vgg13_bn-abd245e5.pth
+python_dev/dataset_animals/raw-img
+python_dev/dataset_animals/.DS_Store
+python_dev/pretrained_weights/vgg13_bn-abd245e5.pth
+python_dev/checkpoints
+.DS_store
