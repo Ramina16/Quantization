@@ -22,7 +22,8 @@ You need to install Android Studio and сorresponding SDKs. Then run *android* f
 <img width="250" alt="image" src="https://github.com/user-attachments/assets/dfea01ce-3727-4698-a428-8a3b2666417b" />
 <img width="250" alt="image" src="https://github.com/user-attachments/assets/3a001aa9-363e-4bf4-ae47-7d7a7420c01f" />
 <img width="250" alt="image" src="https://github.com/user-attachments/assets/c13e45fd-d27f-48f1-afcb-cd924a5065fa" />
-![Demo](videos/github.com/Ramina16/Quantization/tree/main/assets/demo.gif)
+
+![til](videos/github.com/Ramina16/Quantization/tree/main/assets/demo.gif)
 
 
 
