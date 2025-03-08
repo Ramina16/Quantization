@@ -1,14 +1,25 @@
+import argparse
+import json
 import torch
 
 from data_loader import CustomDataLoader
 from main_functions import calibrate_model, evaluate, load_model
-from python_dev.constants import KEY_ACCURACY, KEY_NUM_IMAGES, KEY_PRECISION, KEY_RECALL
-from vgg_13 import QVGG_13
+from python_dev.constants import KEY_ACCURACY, KEY_NUM_IMAGES, KEY_PATH_TO_DATA, KEY_USE_PRETRAINED_W, KEY_PRECISION, KEY_RECALL
 
 
 
 if __name__ == '__main__':
-    loader = CustomDataLoader(path_to_data='dataset_animals/raw-img')
+    parser = argparse.ArgumentParser(description='Quantization')
+    parser.add_argument('--config_path', '-config_path', type=str, help='Path to config file with model and training parameters',
+                        default='default_config.json')
+    args = parser.parse_args()
+    
+    with open(args.config_path, 'r') as f:
+        config = json.loads(f.read())
+
+    config[KEY_USE_PRETRAINED_W] = True if config[KEY_USE_PRETRAINED_W] == 'True' else False
+    
+    loader = CustomDataLoader(path_to_data=config[KEY_PATH_TO_DATA])
     train_loader, val_loader, test_loader = loader.get_train_test_data()
 
     # quantize model to int8

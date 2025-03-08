@@ -4,7 +4,7 @@ import json
 
 from data_loader import CustomDataLoader
 from main_functions import evaluate, load_model
-from constants import KEY_ACCURACY, KEY_NUM_IMAGES, KEY_RECALL, KEY_PRECISION, KEY_NUM_CLASSES , KEY_PATH_TO_DATA
+from constants import KEY_ACCURACY, KEY_NUM_IMAGES, KEY_RECALL, KEY_PRECISION, KEY_NUM_CLASSES , KEY_PATH_TO_DATA, KEY_USE_PRETRAINED_W
 from training import Trainer
 
 
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     with open(args.config_path, 'r') as f:
         config = json.loads(f.read())
 
-    config['use_pretrained_w'] = True if config['use_pretrained_w'] == 'True' else False
+    config[KEY_USE_PRETRAINED_W] = True if config[KEY_USE_PRETRAINED_W] == 'True' else False
 
     loader = CustomDataLoader(path_to_data=config[KEY_PATH_TO_DATA])
     train_loader, val_loader, test_loader = loader.get_train_test_data()
