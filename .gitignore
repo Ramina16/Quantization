@@ -3,3 +3,4 @@ python_dev/dataset_animals/.DS_Store
 python_dev/pretrained_weights/vgg13_bn-abd245e5.pth
 python_dev/checkpoints
 .DS_store
+android/.idea

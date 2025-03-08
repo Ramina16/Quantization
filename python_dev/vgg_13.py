@@ -111,6 +111,8 @@ class QVGG_13(nn.Module):
         x = self.avgpool(x)
         x = torch.flatten(x, 1)
         x = self.classifier(x)
+        
+        # shouldn't be used if you want specifically INT8 output. Now it is dequantized to float32
         x = self.dequant(x)
 
         return x

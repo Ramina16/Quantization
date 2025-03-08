@@ -2,17 +2,17 @@ import torch
 import os
 
 from tqdm import tqdm
-from vgg_13 import VGG_13
+from vgg_13 import QVGG_13, VGG_13
 from callbacks_utils import CHECKPOINTS_FOLDER
 
 from constants import KEY_ACCURACY, KEY_NAME_BEST_MODEL, KEY_NUM_IMAGES, KEY_PRECISION, KEY_RECALL
 
 
-def load_model(device='cpu', use_pretrained_w=True, num_classes=10):
+def load_model(device='cpu', use_pretrained_w=True, num_classes=10, quantized=False):
     """
     
     """
-    model = VGG_13(num_classes=num_classes)
+    model = VGG_13(num_classes=num_classes) if quantized else QVGG_13(num_classes=num_classes)
     model = model.to(device)
     if use_pretrained_w:
         pretrained_w = os.path.join('pretrained_weights', 'vgg13_bn-abd245e5.pth')
