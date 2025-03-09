@@ -15,9 +15,10 @@ python3 -m model_quantization --config_path 'python_dev/default_config.json'
 This script will save quantized (to INT8) .onnx model. Outputs are dequantized to FLOAT32, but you can remove dequantized layer in *python_dev/vgg_13.py* to store outputs in INT8 format.
 
 ### Start an adroid application:
-```bash
 You need to install Android Studio and сorresponding SDKs. Then run *android* folder as project in android srudio, build it and run. You should connect your mobile phone to your PC/laptop. 
-```
+Android device should be in [developer mode](https://developer.android.com/studio/debug/dev-options) with USB debugging enabled.
+
+You also need to copy .onnx model file to *android/app/src/main/res/raw*
 
 <p align="center">
     <img width="250" alt="image" src="https://github.com/user-attachments/assets/dfea01ce-3727-4698-a428-8a3b2666417b" />
